@@ -1,3 +1,9 @@
+@font-face{
+    font-family:'pokemon';
+    src:url(/font/pocket.ttf);
+    /* Otros atributos de la fuente, como font-weight y font-style, si es necesario */;
+    color: #ffffffc0;
+  }
 html,
 body,
 div,
@@ -104,14 +110,15 @@ section {
 
 body {
     line-height: 1;
-    background: rgba(9,2,19,1);
-    background: -moz-linear-gradient(top, rgba(9,2,19,1) 0%, rgba(8,0,2,1) 36%, rgba(18,0,3,1) 61%, rgba(9,2,19,1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(9,2,19,1)), color-stop(36%, rgba(8,0,2,1)), color-stop(61%, rgba(18,0,3,1)), color-stop(100%, rgba(9,2,19,1)));
-    background: -webkit-linear-gradient(top, rgba(9,2,19,1) 0%, rgba(8,0,2,1) 36%, rgba(18,0,3,1) 61%, rgba(9,2,19,1) 100%);
-    background: -o-linear-gradient(top, rgba(9,2,19,1) 0%, rgba(8,0,2,1) 36%, rgba(18,0,3,1) 61%, rgba(9,2,19,1) 100%);
-    background: -ms-linear-gradient(top, rgba(9,2,19,1) 0%, rgba(8,0,2,1) 36%, rgba(18,0,3,1) 61%, rgba(9,2,19,1) 100%);
-    background: linear-gradient(to bottom, rgba(9,2,19,1) 0%, rgba(8,0,2,1) 36%, rgba(18,0,3,1) 61%, rgba(9,2,19,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#090213', endColorstr='#090213', GradientType=0 );
+    background: rgba(0,0,0,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(10,0,2,1) 36%, rgba(9,1,2,1) 61%, rgba(10,0,0,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0,0,0,1)), color-stop(36%, rgba(10,0,2,1)), color-stop(61%, rgba(9,1,2,1)), color-stop(100%, rgba(10,0,0,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(10,0,2,1) 36%, rgba(9,1,2,1) 61%, rgba(10,0,0,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(10,0,2,1) 36%, rgba(9,1,2,1) 61%, rgba(10,0,0,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(10,0,2,1) 36%, rgba(9,1,2,1) 61%, rgba(10,0,0,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(10,0,2,1) 36%, rgba(9,1,2,1) 61%, rgba(10,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#0a0000', GradientType=1 );
+min-height:100vh ;
 }
 
 ol,
@@ -140,7 +147,8 @@ table {
 
 
 .shadow-pop:hover {
-    animation: shadow-pop-bottom-right 0.5s linear both
+    animation: shadow-pop-bottom-right 0.5s linear both;
+
 }
 
 @keyframes shadow-pop-bottom-right {
@@ -154,7 +162,19 @@ table {
         transform: translateX(-8px) translateY(-8px)
     }
 }
+.mainTitle{
+    font-family:'pokemon';
+    color: rgb(53,106,188);
+}
 
+.mainTitle span:nth-child(1){
+    color: rgb(255, 0, 0);
+
+}
+.mainTitle span:nth-child(2){
+    color: rgb(255,205,0);
+
+}
 .hidden {
 
     display: none;
@@ -165,7 +185,7 @@ table {
     cursor: pointer;
     width: 40px;
     height: 40px;
-    background-image: url('./bag.svg');
+    background-image: url('../img/bag.svg');
     background-size: cover;
     display: flex;
     position: fixed;
@@ -211,40 +231,3 @@ table {
     }
   }
   
-/* .shake-left {
-    animation: shake-left 0.8s linear both
-}
-
-@keyframes shake-left {
-
-    0%,
-    100% {
-        transform: rotate(0deg);
-        transform-origin: 0 50%
-    }
-
-    10% {
-        transform: rotate(2deg)
-    }
-
-    20%,
-    40%,
-    60% {
-        transform: rotate(-4deg)
-    }
-
-    30%,
-    50%,
-    70% {
-        transform: rotate(4deg)
-    }
-
-    80% {
-        transform: rotate(-2deg)
-    }
-
-    90% {
-        transform: rotate(2deg)
-    }
-}
- */
