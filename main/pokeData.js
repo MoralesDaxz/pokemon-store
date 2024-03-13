@@ -99,5 +99,15 @@ const pokemons = [
       name: "raticate",
       img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/female/20.gif",
     },
+    {
+      id: 25,
+      name: "pikachu",
+      img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/female/25.gif",
+    },
+    {
+      id: 26,
+      name: "raichu",
+      img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/shiny/female/26.gif",
+    },
   ];
   export {pokemons}

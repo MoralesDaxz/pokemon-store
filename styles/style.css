@@ -1,9 +1,14 @@
-@font-face{
-    font-family:'pokemon';
-    src:url(/font/pocket.ttf);
-    /* Otros atributos de la fuente, como font-weight y font-style, si es necesario */;
-    color: #ffffffc0;
-  }
+@font-face {
+    font-family: 'pokemonNumber';
+    src: url(/font/solid.ttf);
+    /* Otros atributos de la fuente, como font-weight y font-style, si es necesario */
+}
+@font-face {
+    font-family: 'pokemonLetter';
+    src: url(/font/sugar.ttf);
+    /* Otros atributos de la fuente, como font-weight y font-style, si es necesario */
+}
+
 html,
 body,
 div,
@@ -110,15 +115,15 @@ section {
 
 body {
     line-height: 1;
-    background: rgba(0,0,0,1);
-    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(10,0,2,1) 36%, rgba(9,1,2,1) 61%, rgba(10,0,0,1) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0,0,0,1)), color-stop(36%, rgba(10,0,2,1)), color-stop(61%, rgba(9,1,2,1)), color-stop(100%, rgba(10,0,0,1)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(10,0,2,1) 36%, rgba(9,1,2,1) 61%, rgba(10,0,0,1) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(10,0,2,1) 36%, rgba(9,1,2,1) 61%, rgba(10,0,0,1) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, rgba(10,0,2,1) 36%, rgba(9,1,2,1) 61%, rgba(10,0,0,1) 100%);
-    background: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(10,0,2,1) 36%, rgba(9,1,2,1) 61%, rgba(10,0,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#0a0000', GradientType=1 );
-min-height:100vh ;
+    background: rgba(0, 0, 0, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 1) 0%, rgba(10, 0, 2, 1) 36%, rgba(9, 1, 2, 1) 61%, rgba(10, 0, 0, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0, 0, 0, 1)), color-stop(36%, rgba(10, 0, 2, 1)), color-stop(61%, rgba(9, 1, 2, 1)), color-stop(100%, rgba(10, 0, 0, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 1) 0%, rgba(10, 0, 2, 1) 36%, rgba(9, 1, 2, 1) 61%, rgba(10, 0, 0, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 1) 0%, rgba(10, 0, 2, 1) 36%, rgba(9, 1, 2, 1) 61%, rgba(10, 0, 0, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 1) 0%, rgba(10, 0, 2, 1) 36%, rgba(9, 1, 2, 1) 61%, rgba(10, 0, 0, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 0%, rgba(10, 0, 2, 1) 36%, rgba(9, 1, 2, 1) 61%, rgba(10, 0, 0, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#0a0000', GradientType=1);
+    min-height: 100vh;
 }
 
 ol,
@@ -137,7 +142,7 @@ q:before,
 q:after {
     content: '';
     content: none;
-   
+
 }
 
 table {
@@ -162,19 +167,19 @@ table {
         transform: translateX(-8px) translateY(-8px)
     }
 }
-.mainTitle{
-    font-family:'pokemon';
-    color: rgb(53,106,188);
+
+.mainTitle {
+    font-family: 'pokemonLetter';
+    letter-spacing: 3px;
+    color: rgb(53, 106, 188);
 }
 
-.mainTitle span:nth-child(1){
-    color: rgb(255, 0, 0);
+.mainTitle span:nth-child(1) {
+    font-family: 'pokemonNumber';
+    color: rgb(255, 205, 0);
 
 }
-.mainTitle span:nth-child(2){
-    color: rgb(255,205,0);
 
-}
 .hidden {
 
     display: none;
@@ -198,36 +203,42 @@ table {
     transition: all 300ms;
     transform: scale(1.2);
 }
+
 .pulsate-bck {
-	-webkit-animation: pulsate-bck 0.4s ease-in-out 2 both;
-	        animation: pulsate-bck 0.4s ease-in-out 2 both;
+    -webkit-animation: pulsate-bck 0.4s ease-in-out 2 both;
+    animation: pulsate-bck 0.4s ease-in-out 2 both;
 }
+
 @-webkit-keyframes pulsate-bck {
     0% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
+
     50% {
-      -webkit-transform: scale(0.9);
-              transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
     }
+
     100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
-  }
-  @keyframes pulsate-bck {
+}
+
+@keyframes pulsate-bck {
     0% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
+
     50% {
-      -webkit-transform: scale(0.9);
-              transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
     }
+
     100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
-  }
-  
+}

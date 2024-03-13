@@ -1,25 +1,25 @@
 const body = document.querySelector("body");
 const contentPokemons = document.createElement("div");
 const iconBack = document.getElementById("iconBack");
-const mainTitle = document.createElement("h1");
+const mainTitle = document.createElement("div");
 const emptycar = document.createElement("a");
 let pokemonStack = JSON.parse(localStorage.getItem("Pokemons")) || [];
 
 body.appendChild(mainTitle);
 body.style =
-  "display:flex; flex-direction:column;align-items:center;min-width:320px;background-color:#07010c;font-family:Roboto, Geneva, Tahoma, sans-serif";
+  "display:flex; flex-direction:column;align-items:center;min-width:320px;min-height:100vh;font-family:Roboto, Geneva, Tahoma, sans-serif";
 iconBack.style = "display:block;position:absolute;top:20px;left:5%;";
 emptycar.style = "display:none";
 mainTitle.style =
-  "border-bottom: #ffffffc2 solid 4px;min-width:fit-content;font-weight:800px;font-size:3rem;color:white;text-align:center;padding:20px 20px";
+  "display:flex;align-items:center;border-bottom: #ffffffc2 solid 4px;min-width:fit-content;font-weight:600px;font-size:2rem;color:white;text-align:center;margin-top: 20px";
 mainTitle.innerHTML =
-  "<h2 class='mainTitle'>POKEMONS <span>-</span> Almacen <span id='quantity'> </span></h1>";
+  "<h1 class='mainTitle'>Almacen <span style='font-size:1.4rem' id='quantity'> </span></h1>";
 emptycar.setAttribute("href", "./index.html");
 
 const alertEmptyCar = () => {
   if (pokemonStack.length < 1) {
     body.appendChild(emptycar);
-    emptycar.innerHTML = `<p>Carro de compras vacio, <span style="text-decoration:underline">volver a tienda!</span></p>`;
+    emptycar.innerHTML = `<p>Almacen de Pokemons vacio, <span style="text-decoration:underline">volver a tienda!</span></p>`;
     emptycar.style =
       "margin-top:10%;display:flex;font-size:1.5rem;font-weight:900;text-align:center;color:white;cursor:pointer;text-decoration:none";
     return;
@@ -50,8 +50,8 @@ const pokemonsPurchased = () => {
     contentBottons.appendChild(showUnit);
     contentBottons.appendChild(btnAdd);
     contentPokemons.style =
-      "margin-top:5%;display:flex;flex-wrap: wrap;justify-content:center;height:auto;width:90%;gap:10px";
-    card.style = `width:180px;height:240px;display:flex;flex-direction:column; align-items:center;justify-content: space-between;  border-radius:8px;background-image: url('./img/pokebola.png'); background-position:center;background-size:cover`;
+      "margin-top:2%;display:flex;flex-wrap: wrap;justify-content:center;height:auto;width:90%;gap:.5rem";
+    card.style = `width:10.4rem;height:15rem;display:flex;flex-direction:column; align-items:center;justify-content: space-between;  border-radius:8px;background-image: url('./img/pokebola.png'); background-position:center;background-size:cover`;
     card.classList.add("shadow-pop");
     titlePokemon.style =
       "width:fit-content;height:1%;margin-top:21%;margin-left:7%;color:black;text-transform:capitalize;font-size:14px;letter-spacing:1px;font-weight: 800";
@@ -88,7 +88,7 @@ const quantityTitle = () => {
     0
   );
   return totalPokemons > 0
-    ? (document.querySelector("#quantity").innerText = `( ${totalPokemons} )`)
+    ? (document.querySelector("#quantity").innerText = `(${totalPokemons})`)
     : "";
 };
 

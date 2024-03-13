@@ -33,9 +33,9 @@ closeMainCar.setAttribute("title", "close");
 
 body.style =
   "display:flex; flex-direction:column;align-items:center;min-width:320px;font-family:Roboto, Geneva, Tahoma, sans-serif";
-titlePokemon.style = `width:40%; height:8rem;background-image: url('./img/titulo.png');background-repeat:no-repeat;background-position:center;background-size:60%;margin-top:2%;margin-bottom:1%`;
+titlePokemon.style = `width:70%;max-width:450px;height:8rem;background-image: url('./img/titulo.png');background-repeat:no-repeat;background-position:center;background-size:90%;margin-top:2%;margin-bottom:1%`;
 divContent.style =
-  "display:flex;flex-wrap: wrap;justify-content:center;height:auto;width:90%;gap:10px";
+  "display:flex;flex-wrap: wrap;justify-content:center;width:100%;height:100%;gap:0.5rem";
 titleCar.innerText = "COMPRADOS";
 titleCar.style =
   "font-size:1.4rem; text-align:center;font-weight:800;letter-spacing: 2px;";
@@ -112,7 +112,7 @@ const createCard = () => {
     divCard.appendChild(name);
     divCard.appendChild(imagen);
     divCard.appendChild(btn);
-    divCard.style = `width:180px;height:240px; display:flex; flex-direction:column; align-items:center;justify-content: space-between; border-radius:8px;background-image: Url('./img/pokebola.png'); background-position:center;background-size:cover`;
+    divCard.style = `width:10.4rem;height:15rem; display:flex; flex-direction:column; align-items:center;justify-content: space-between; border-radius:8px;background-image: Url('./img/pokebola.png'); background-position:center;background-size:cover`;
     name.style =
       "width:fit-content;height:1%;margin-top:21%;margin-left:7%;color:black;text-transform:capitalize;font-size:14px;font-weight: 800;letter-spacing:1px";
 
