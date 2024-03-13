@@ -12,7 +12,7 @@ body.style =
 iconBack.style = "display:block;position:absolute;top:20px;left:5%;";
 emptyText.style = "display:none";
 mainTitle.style =
-  "width:60%;font-weight:800px;font-size:1.9rem;color:white;text-align:center;padding:10px 10px";
+  "width:60%;font-weight:800px;font-size:1.9rem;color:white;text-align:center;padding:20px 20px";
 mainTitle.innerHTML =
   "<h2>Pokemons - Comprados <span id='quantity' > </span></h1>";
 emptyText.setAttribute("href", "./index.html");
@@ -22,7 +22,7 @@ const alertEmptyCar = () => {
     body.appendChild(emptyText);
     emptyText.innerHTML = `<p>Carro de compras vacio, <span style="text-decoration:underline">volver a tienda!</span></p>`;
     emptyText.style =
-      "display:flex;font-size:1.5rem; font-weight:900;text-align:center;color:white;cursor:pointer;text-decoration:none";
+      "margin-top:10%;display:flex;font-size:1.5rem;font-weight:900;text-align:center;color:white;cursor:pointer;text-decoration:none";
     return;
   }
   emptyText.style = "display:none";
@@ -51,7 +51,7 @@ const pokemonsPurchased = () => {
     contentBottons.appendChild(showUnit);
     contentBottons.appendChild(btnAdd);
     contentPokemons.style =
-      "display:flex;flex-wrap: wrap;justify-content:center;height:auto;width:90%;gap:10px";
+      "margin-top:5%;display:flex;flex-wrap: wrap;justify-content:center;height:auto;width:90%;gap:10px";
     divCard.style = `width:180px;height:240px;display:flex;flex-direction:column; align-items:center;justify-content: space-between;  border-radius:8px;background-image: url('./styles/pokebola.png'); background-position:center;background-size:cover`;
     divCard.classList.add("shadow-pop");
     titlePokemon.style =
@@ -86,7 +86,7 @@ const quantityTitle = () => {
     (acc, curr) => acc + curr.cantidad,
     0
   );
-return  totalPokemons > 0
+  return totalPokemons > 0
     ? (document.querySelector("#quantity").innerText = `( ${totalPokemons} )`)
     : "";
 };
@@ -95,14 +95,14 @@ const addQuantity = () => {
   let elementFound = pokemonStack.find(
     (pokemon) => pokemon.id === event.target.id * 1
   );
-  
+
   if (elementFound) {
     elementFound.cantidad += 1;
     localStorage.setItem("Pokemons", JSON.stringify(pokemonStack));
     pokemonStack = JSON.parse(localStorage.getItem("Pokemons"));
     unitElementText.innerText = elementFound.cantidad;
   }
-  quantityTitle()
+  quantityTitle();
 };
 
 const substractQuantity = () => {
@@ -114,11 +114,12 @@ const substractQuantity = () => {
 
   localStorage.setItem("Pokemons", JSON.stringify(pokemonStack));
   pokemonStack = JSON.parse(localStorage.getItem("Pokemons"));
-  unitElementText.innerText = elementFound.cantidad > 0?elementFound.cantidad:' ';
-  quantityTitle()
+  unitElementText.innerText =
+    elementFound.cantidad > 0 ? elementFound.cantidad : " ";
+  quantityTitle();
   checkZero();
   return;
 };
 pokemonsPurchased();
-quantityTitle()
+quantityTitle();
 alertEmptyCar();

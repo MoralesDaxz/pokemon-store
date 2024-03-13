@@ -104,6 +104,14 @@ section {
 
 body {
     line-height: 1;
+    background: rgba(9,2,19,1);
+    background: -moz-linear-gradient(top, rgba(9,2,19,1) 0%, rgba(8,0,2,1) 36%, rgba(18,0,3,1) 61%, rgba(9,2,19,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(9,2,19,1)), color-stop(36%, rgba(8,0,2,1)), color-stop(61%, rgba(18,0,3,1)), color-stop(100%, rgba(9,2,19,1)));
+    background: -webkit-linear-gradient(top, rgba(9,2,19,1) 0%, rgba(8,0,2,1) 36%, rgba(18,0,3,1) 61%, rgba(9,2,19,1) 100%);
+    background: -o-linear-gradient(top, rgba(9,2,19,1) 0%, rgba(8,0,2,1) 36%, rgba(18,0,3,1) 61%, rgba(9,2,19,1) 100%);
+    background: -ms-linear-gradient(top, rgba(9,2,19,1) 0%, rgba(8,0,2,1) 36%, rgba(18,0,3,1) 61%, rgba(9,2,19,1) 100%);
+    background: linear-gradient(to bottom, rgba(9,2,19,1) 0%, rgba(8,0,2,1) 36%, rgba(18,0,3,1) 61%, rgba(9,2,19,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#090213', endColorstr='#090213', GradientType=0 );
 }
 
 ol,
@@ -122,6 +130,7 @@ q:before,
 q:after {
     content: '';
     content: none;
+   
 }
 
 table {
@@ -169,8 +178,40 @@ table {
     transition: all 300ms;
     transform: scale(1.2);
 }
-
-.shake-left {
+.pulsate-bck {
+	-webkit-animation: pulsate-bck 0.4s ease-in-out 2 both;
+	        animation: pulsate-bck 0.4s ease-in-out 2 both;
+}
+@-webkit-keyframes pulsate-bck {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes pulsate-bck {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+/* .shake-left {
     animation: shake-left 0.8s linear both
 }
 
@@ -206,3 +247,4 @@ table {
         transform: rotate(2deg)
     }
 }
+ */

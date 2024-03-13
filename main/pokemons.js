@@ -30,7 +30,7 @@ toPurchased.setAttribute("target", "_self");
 closeMainCar.setAttribute("title", "close");
 
 body.style =
-  "display:flex; flex-direction:column;align-items:center;min-width:320px;background-color:#07010c;font-family:Roboto, Geneva, Tahoma, sans-serif";
+  "display:flex; flex-direction:column;align-items:center;min-width:320px;font-family:Roboto, Geneva, Tahoma, sans-serif";
 titlePokemon.style = `width:40%; height:8rem;background-image: url('./styles/titulo.png');background-repeat:no-repeat;background-position:center;background-size:60%;margin-top:2%;margin-bottom:1%`;
 divContent.style =
   "display:flex;flex-wrap: wrap;justify-content:center;height:auto;width:90%;gap:10px";
@@ -64,32 +64,35 @@ iconBag.addEventListener("click", () => {
     displayCar();
     return;
   }
+  return
 });
 
 const displayCar = () => {
-  let test = 0;
+
+  let count = 0;
   carShop.forEach((i) => {
-    test += i.cantidad;
-    return (unitsBuys = test);
+    count += i.cantidad;
+    return (unitsBuys = count);
   });
 
   if (carShop.length < 1) {
-    iconBag.classList.remove("bag");
-    iconBag.classList.add("hidden");
+    iconBag.classList.remove("bag","pulsate-bck");
+    iconBag.classList.add("hidden","pulsate-bck");
     return;
   }
   if (showBag === false && showUnits) {
     mainCar.style =
-      "color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;position:fixed;top:10px;right:10px; background-color:#07010ccb; border-radius:6px";
+      "padding-top:25px;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;position:fixed;top:10px;right:10px; background-color:#07010ccb; border-radius:6px";
     unitsPurchased.innerText = unitsBuys;
-    iconBag.classList.remove("bag");
-    iconBag.classList.add("hidden");
+    iconBag.classList.remove("bag","pulsate-bck");
+    iconBag.classList.add("hidden","pulsate-bck");
     return;
   } else {
     mainCar.style = "display:none;";
-    iconBag.classList.remove("hidden");
-    iconBag.classList.add("bag");
+    iconBag.classList.remove("hidden","pulsate-bck");
+    iconBag.classList.add("bag","pulsate-bck");
   }
+  return
 };
 
 const createCard = () => {
@@ -110,26 +113,24 @@ const createCard = () => {
     divCard.style = `width:180px;height:240px; display:flex; flex-direction:column; align-items:center;justify-content: space-between; border-radius:8px;background-image: Url('./styles/pokebola.png'); background-position:center;background-size:cover`; //background:linear-gradient(rgb(255, 0, 0) 50%, rgb(255, 253, 253) 50%);
     name.style =
       "width:fit-content;height:1%;margin-top:21%;margin-left:7%;color:black;text-transform:capitalize;font-size:14px;font-weight: 800;letter-spacing:1px";
- 
+
     btn.style =
       "width:fit-content;margin-top:3%;margin-left:8%;font-size:12px;font-weight:700;padding:2px;border-radius:4px;cursor:pointer";
     btn.innerText = "Comprar";
     divCard.classList.add("shadow-pop");
     btn.addEventListener("click", () => {
-      mainCar.classList.add("shake-left");
+      mainCar.classList.add("pulsate-bck");
       setTimeout(() => {
-        mainCar.classList.remove("shake-left");
+        mainCar.classList.remove("pulsate-bck");
       }, 500);
-
       let elementFound = carShop.find((item) => item.name === pokemon.name);
       if (elementFound) {
         elementFound.cantidad += 1;
       } else {
         carShop.unshift(pokemon);
       }
-
       localStorage.setItem("Pokemons", JSON.stringify(carShop));
-      displayCar();
+      return displayCar();
     });
   }); //end forEach
 }; //end createCard
