@@ -1,105 +1,4 @@
-const pokemons = [
-  {
-    id: 1,
-    name: "bulbasaur",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-  },
-  {
-    id: 2,
-    name: "ivysaur",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
-  },
-  {
-    id: 3,
-    name: "venusaur",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
-  },
-  {
-    id: 4,
-    name: "charmander",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-  },
-  {
-    id: 5,
-    name: "charmeleon",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
-  },
-  {
-    id: 6,
-    name: "charizard",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
-  },
-  {
-    id: 7,
-    name: "squirtle",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
-  },
-  {
-    id: 8,
-    name: "wartortle",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
-  },
-  {
-    id: 9,
-    name: "blastoise",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
-  },
-  {
-    id: 10,
-    name: "caterpie",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
-  },
-  {
-    id: 11,
-    name: "metapod",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
-  },
-  {
-    id: 12,
-    name: "butterfree",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
-  },
-  {
-    id: 13,
-    name: "weedle",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
-  },
-  {
-    id: 14,
-    name: "kakuna",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
-  },
-  {
-    id: 15,
-    name: "beedrill",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
-  },
-  {
-    id: 16,
-    name: "pidgey",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png",
-  },
-  {
-    id: 17,
-    name: "pidgeotto",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
-  },
-  {
-    id: 18,
-    name: "pidgeot",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
-  },
-  {
-    id: 19,
-    name: "rattata",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
-  },
-  {
-    id: 20,
-    name: "raticate",
-    img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png",
-  },
-];
+import { pokemons } from "./pokeData.js";
 
 const body = document.querySelector("body");
 const divContent = document.createElement("div");
@@ -134,7 +33,7 @@ body.style =
   "display:flex; flex-direction:column;align-items:center;min-width:320px;background-color:#07010c;font-family:Roboto, Geneva, Tahoma, sans-serif";
 titlePokemon.style = `width:40%; height:8rem;background-image: url('./styles/titulo.png');background-repeat:no-repeat;background-position:center;background-size:60%;margin-top:2%;margin-bottom:1%`;
 divContent.style =
-  "display:flex;flex-wrap: wrap;justify-content:center;height:auto;width:90%;flex-wrap: wrap;gap:1%";
+  "display:flex;flex-wrap: wrap;justify-content:center;height:auto;width:90%;gap:10px";
 titleCar.innerText = "COMPRADOS";
 titleCar.style =
   "font-size:1.4rem; text-align:center;font-weight:800;letter-spacing: 2px;";
@@ -203,20 +102,19 @@ const createCard = () => {
     name.innerText = pokemon.name;
     pokemon.cantidad = 1;
     imagen.src = pokemon.img;
-
-    btn.id = uuid();
+    btn.id = pokemon.id;
     divContent.appendChild(divCard);
     divCard.appendChild(name);
     divCard.appendChild(imagen);
     divCard.appendChild(btn);
-    divCard.style = `width:180px;height:240px; display:flex; flex-direction:column; align-items:center; border-radius:2px;background-image: Url('./styles/pokebola.png'); background-position:center;background-size:cover`; //background:linear-gradient(rgb(255, 0, 0) 50%, rgb(255, 253, 253) 50%);
+    divCard.style = `width:180px;height:240px; display:flex; flex-direction:column; align-items:center;justify-content: space-between; border-radius:8px;background-image: Url('./styles/pokebola.png'); background-position:center;background-size:cover`; //background:linear-gradient(rgb(255, 0, 0) 50%, rgb(255, 253, 253) 50%);
     name.style =
       "width:fit-content;height:1%;margin-top:21%;margin-left:7%;color:black;text-transform:capitalize;font-size:14px;font-weight: 800;letter-spacing:1px";
-    imagen.style = "margin-left:7%;margin-top:8%";
+ 
     btn.style =
       "width:fit-content;margin-top:3%;margin-left:8%;font-size:12px;font-weight:700;padding:2px;border-radius:4px;cursor:pointer";
     btn.innerText = "Comprar";
-
+    divCard.classList.add("shadow-pop");
     btn.addEventListener("click", () => {
       mainCar.classList.add("shake-left");
       setTimeout(() => {

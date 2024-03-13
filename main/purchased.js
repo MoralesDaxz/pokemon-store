@@ -9,10 +9,10 @@ body.appendChild(mainTitle);
 
 body.style =
   "display:flex; flex-direction:column;align-items:center;min-width:320px;background-color:#07010c;font-family:Roboto, Geneva, Tahoma, sans-serif";
-iconBack.style = "display:block;position:absolute;top:15px;left:7%;";
+iconBack.style = "display:block;position:absolute;top:20px;left:5%;";
 emptyText.style = "display:none";
 mainTitle.style =
-  "font-weight:800px;font-size:1.9rem;color:white;text-align:center";
+  "width:60%;font-weight:800px;font-size:1.9rem;color:white;text-align:center;padding:10px 10px";
 mainTitle.innerHTML =
   "<h2>Pokemons - Comprados <span id='quantity' > </span></h1>";
 emptyText.setAttribute("href", "./index.html");
@@ -51,17 +51,17 @@ const pokemonsPurchased = () => {
     contentBottons.appendChild(showUnit);
     contentBottons.appendChild(btnAdd);
     contentPokemons.style =
-      "display:flex;flex-wrap: wrap;justify-content:center;height:auto;width:90%;flex-wrap: wrap;gap:1%";
-    divCard.style = `width:180px;height:240px; display:flex; flex-direction:column; align-items:center; border-radius:2px;background-image: url('./styles/pokebola.png'); background-position:center;background-size:cover`;
+      "display:flex;flex-wrap: wrap;justify-content:center;height:auto;width:90%;gap:10px";
+    divCard.style = `width:180px;height:240px;display:flex;flex-direction:column; align-items:center;justify-content: space-between;  border-radius:8px;background-image: url('./styles/pokebola.png'); background-position:center;background-size:cover`;
+    divCard.classList.add("shadow-pop");
     titlePokemon.style =
       "width:fit-content;height:1%;margin-top:21%;margin-left:7%;color:black;text-transform:capitalize;font-size:14px;letter-spacing:1px;font-weight: 800";
-    imagen.style = "margin-left:7%;margin-top:8%";
     contentBottons.style =
       "display:flex;justify-content:center;align-items:baseline";
     btnSubtract.style =
       "width:25px;height:25px;font-size:15px;font-weight:700;padding:2px;border-radius:4px; cursor:pointer";
     showUnit.style =
-      "width:100%;height:25px;margin:0px;text-align:center; font-weight:700";
+      "color:white; width:100%;height:25px;margin:0px;text-align:center; font-weight:700";
     btnSubtract.innerText = "-";
     btnAdd.style =
       "width:25px;height:25px;font-size:15px;font-weight:700;padding:2px;border-radius:4px; cursor:pointer";
@@ -77,7 +77,6 @@ const checkZero = () => {
       let filtro = pokemonStack.filter((item) => item.cantidad >= 1);
       localStorage.setItem("Pokemons", JSON.stringify(filtro));
       pokemonStack = JSON.parse(localStorage.getItem("Pokemons"));
-    
       return location.reload();
     }
   });
@@ -88,7 +87,7 @@ const quantityTitle = () => {
     0
   );
 return  totalPokemons > 0
-    ? (document.querySelector("#quantity").innerText = `(${totalPokemons})`)
+    ? (document.querySelector("#quantity").innerText = `( ${totalPokemons} )`)
     : "";
 };
 const addQuantity = () => {
