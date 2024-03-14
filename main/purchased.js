@@ -50,7 +50,7 @@ const pokemonsPurchased = () => {
     contentBottons.appendChild(showUnit);
     contentBottons.appendChild(btnAdd);
     contentPokemons.style =
-      "margin-top:2%;display:flex;flex-wrap: wrap;justify-content:center;height:auto;width:90%;gap:.5rem";
+      "margin-top:2%;display:flex;flex-wrap: wrap;justify-content:center;height:auto;width:100%;gap:0.5rem";
     card.style = `width:10.4rem;height:15rem;display:flex;flex-direction:column; align-items:center;justify-content: space-between;  border-radius:8px;background-image: url('./img/pokebola.png'); background-position:center;background-size:cover`;
     card.classList.add("shadow-pop");
     titlePokemon.style =
