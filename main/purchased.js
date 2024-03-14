@@ -8,7 +8,7 @@ let pokemonStack = JSON.parse(localStorage.getItem("Pokemons")) || [];
 body.appendChild(mainTitle);
 body.style =
   "display:flex; flex-direction:column;align-items:center;min-width:320px;min-height:100vh;font-family:Roboto, Geneva, Tahoma, sans-serif";
-iconBack.style = "display:block;position:absolute;top:20px;left:5%;";
+iconBack.style = "display:block;position:absolute;top:20px;left:1.5%;";
 emptycar.style = "display:none";
 mainTitle.style =
   "display:flex;align-items:center;border-bottom: #ffffffc2 solid 4px;min-width:fit-content;font-weight:600px;font-size:2rem;color:white;text-align:center;margin-top: 20px";
